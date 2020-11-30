@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "@bbc/psammead-headings": "^5.0.4",
+    "@bbc/psammead-image": "^2.0.0",
     "@bbc/psammead-navigation": "^8.0.6",
     "@bbc/psammead-paragraph": "^4.0.4",
+    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.1.1",
     "@emotion/styled": "^11.0.0",
     "@testing-library/jest-dom": "^5.11.6",

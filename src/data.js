@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Headline } from "@bbc/psammead-headings";
 import Paragraph from "@bbc/psammead-paragraph";
+import Image from "@bbc/psammead-image";
 function Data({ num }) {
   const [article, setArticle] = useState("");
   let data = "";
@@ -33,13 +34,21 @@ function Data({ num }) {
 
   return article ? (
     <div>
-      {article.map((item) =>
-        item.type === "heading" ? (
-          <Headline>{item.model.text}</Headline>
-        ) : (
-          <Paragraph>{item.model.text}</Paragraph>
-        )
-      )}
+      {article.map((item) => {
+        switch (item.type) {
+          case "heading":
+            return <Headline>{item.model.text}</Headline>;
+
+          case "paragraph":
+            return <Paragraph>{item.model.text}</Paragraph>;
+
+          case "image":
+            return <Image src={item.model.url} alt={item.model.altText} />;
+
+          default:
+            break;
+        }
+      })}
     </div>
   ) : (
     <div>loading ...</div>

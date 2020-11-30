@@ -1,6 +1,5 @@
 import Data from "./Data";
 import React, { useState } from "react";
-import { CanonicalMenuButton } from "@bbc/psammead-navigation/dropdown";
 import { ScrollableNavigation } from "@bbc/psammead-navigation/scrollable";
 import Navigation, {
   NavigationUl,
