@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Headline } from "@bbc/psammead-headings";
 import Paragraph from "@bbc/psammead-paragraph";
 import Image from "@bbc/psammead-image";
+import BulletedList, { BulletedListItem } from "@bbc/psammead-bulleted-list";
+
 function Data({ num }) {
   const [article, setArticle] = useState("");
   let data = "";
@@ -44,6 +46,17 @@ function Data({ num }) {
 
           case "image":
             return <Image src={item.model.url} alt={item.model.altText} />;
+
+          case "list":
+            let listLength = item.model.items.length;
+            let list = [];
+            for (let i = 0; i < listLength; i++) {
+              list[i] = (
+                <BulletedListItem>{item.model.items[i]}</BulletedListItem>
+              );
+            }
+
+            return <BulletedList>{list}</BulletedList>;
 
           default:
             break;

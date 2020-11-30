@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@bbc/psammead-bulleted-list": "^3.0.4",
     "@bbc/psammead-headings": "^5.0.4",
     "@bbc/psammead-image": "^2.0.0",
     "@bbc/psammead-navigation": "^8.0.6",
