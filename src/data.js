@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-
+import { Headline } from "@bbc/psammead-headings";
+import Paragraph from "@bbc/psammead-paragraph";
 function Data() {
   const [article, setArticle] = useState("");
   const getData = () => {
@@ -11,7 +12,15 @@ function Data() {
   }, []);
 
   return article ? (
-    <div className="Data">{article[0].model.text}</div>
+    <div>
+      {article.map((item) =>
+        item.type === "heading" ? (
+          <Headline>{item.model.text}</Headline>
+        ) : (
+          <Paragraph>{item.model.text}</Paragraph>
+        )
+      )}
+    </div>
   ) : (
     <div>loading ...</div>
   );
