@@ -1,14 +1,11 @@
-import logo from './logo.svg';
-import './App.css';
+import { Headline, SubHeading } from "@bbc/psammead-headings";
+const data = require("./data/article-1.json");
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Headline>{data.title}</Headline>
         <a
           className="App-link"
           href="https://reactjs.org"
