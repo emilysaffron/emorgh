@@ -1,11 +1,9 @@
 const getData = (num) => {
   let data = "";
-  console.log(num);
 
   let article = "";
   switch (num) {
     case 1:
-      console.log("here");
       data = require("./data/article-1.json");
       article = data.body;
       return article;

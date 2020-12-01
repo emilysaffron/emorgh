@@ -51,7 +51,7 @@ function NavBar() {
         <Data exact path={"/"} num={pageNo} />
       </Router>
       <Router>
-        <Rate exact path={"/rate"} />
+        <Rate exact path={"/rate"} rate={rate} />
       </Router>
     </div>
   );
