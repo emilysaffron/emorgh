@@ -1,35 +1,11 @@
 import Data from "./Data";
 import React, { useState } from "react";
-import { ScrollableNavigation } from "@bbc/psammead-navigation/scrollable";
-import Navigation, {
-  NavigationUl,
-  NavigationLi,
-} from "@bbc/psammead-navigation";
+import NavBar from "./NavBar";
+import { UsefulLink } from "@bbc/psammead-useful-links";
 function App() {
-  const [pageNo, updatePage] = useState(1);
-
-  const loadNextArticle = () => {
-    if (pageNo < 5) {
-      updatePage(pageNo + 1);
-    }
-  };
-
-  const loadPreviousArticle = () => {
-    if (pageNo > 1) {
-      updatePage(pageNo - 1);
-    }
-  };
   return (
     <div className="App">
-      <Navigation>
-        <ScrollableNavigation>
-          <NavigationUl>
-            <NavigationLi onClick={loadNextArticle}>Next</NavigationLi>
-            <NavigationLi onClick={loadPreviousArticle}>Previous</NavigationLi>
-          </NavigationUl>
-        </ScrollableNavigation>
-      </Navigation>
-      <Data num={pageNo} />
+      <NavBar />
     </div>
   );
 }
