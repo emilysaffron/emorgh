@@ -8,7 +8,10 @@ import Navigation, {
   NavigationUl,
   NavigationLi,
 } from "@bbc/psammead-navigation";
+
 import Rate from "./Rate";
+import Submitted from "./Submitted";
+
 function NavBar() {
   const [pageNo, updatePage] = useState(1);
   const [rate, updateRate] = useState(false);
@@ -34,6 +37,7 @@ function NavBar() {
       <Navigation>
         <ScrollableNavigation>
           <NavigationUl>
+            <NavigationLi>Home</NavigationLi>
             <NavigationLi onClick={loadNextArticle}>Next</NavigationLi>
             <Link to={"/"}>
               <NavigationLi onClick={loadPreviousArticle}>
@@ -52,6 +56,10 @@ function NavBar() {
       </Router>
       <Router>
         <Rate exact path={"/rate"} rate={rate} />
+      </Router>
+
+      <Router>
+        <Submitted exact path={"/submitted"} rate={rate} />
       </Router>
     </div>
   );

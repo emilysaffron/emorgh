@@ -3,7 +3,14 @@ import { Headline } from "@bbc/psammead-headings";
 import Paragraph from "@bbc/psammead-paragraph";
 import Image from "@bbc/psammead-image";
 import BulletedList, { BulletedListItem } from "@bbc/psammead-bulleted-list";
+import Figure from "@bbc/psammead-figure";
+import styled from "@emotion/styled";
 import getData from "./FetchArticles";
+
+const StyledFigure = styled(Figure)`
+  width: 500px;
+  height: 500px;
+`;
 function Data({ num }) {
   const [article, setArticle] = useState("");
 
@@ -22,7 +29,11 @@ function Data({ num }) {
             return <Paragraph>{item.model.text}</Paragraph>;
 
           case "image":
-            return <Image src={item.model.url} alt={item.model.altText} />;
+            return (
+              <StyledFigure>
+                <Image src={item.model.url} alt={item.model.altText} />
+              </StyledFigure>
+            );
 
           case "list":
             let listLength = item.model.items.length;

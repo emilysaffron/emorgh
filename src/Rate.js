@@ -10,12 +10,9 @@ import {
   MostReadItemWrapper,
 } from "@bbc/psammead-most-read";
 import { Rating } from "@material-ui/lab";
-import styled from "@emotion/styled";
-import "./1.png";
-
-const StyledMostRead = styled(MostReadList)`
-  display: block;
-`;
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { Router, Link } from "@reach/router";
+import Submitted from "./Submitted";
 const Rate = ({ rate }) => {
   const title1 = getData(1)[0].model.text;
   const title2 = getData(2)[0].model.text;
@@ -25,6 +22,7 @@ const Rate = ({ rate }) => {
 
   return (
     <div>
+      <Headline>Rank The Articles</Headline>
       <MostReadItemWrapper dir="ltr" children columnLayout="twoColumn">
         <MostReadRank
           service="news"
@@ -93,6 +91,11 @@ const Rate = ({ rate }) => {
         <MostReadLink dir="ltr" service="news" script={latin} title={title5} />
       </MostReadItemWrapper>
       <Rating size="large" />
+      <div>
+        <Link to={"/submitted"}>
+          <button>Submit</button>
+        </Link>
+      </div>
     </div>
   );
 };
