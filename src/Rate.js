@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import getData from "./FetchArticles";
 import { latin } from "@bbc/gel-foundations/scripts";
 import { StoryPromoLi, StoryPromoUl } from "@bbc/psammead-story-promo-list";
@@ -9,8 +9,9 @@ import {
   MostReadRank,
   MostReadItemWrapper,
 } from "@bbc/psammead-most-read";
-
+import { Rating } from "@material-ui/lab";
 import styled from "@emotion/styled";
+import "./1.png";
 
 const StyledMostRead = styled(MostReadList)`
   display: block;
@@ -34,14 +35,9 @@ const Rate = ({ rate }) => {
           columnLayout="twoColumn"
           size="small"
         />
-        <MostReadLink
-          dir="ltr"
-          href="/bbc.co.uk/news/articles/27051997"
-          service="news"
-          script={latin}
-          title={title1}
-        />
+        <MostReadLink dir="ltr" service="news" script={latin} title={title1} />
       </MostReadItemWrapper>
+      <Rating size="large" />
       <MostReadItemWrapper dir="ltr" children columnLayout="twoColumn">
         <MostReadRank
           service="news"
@@ -52,14 +48,10 @@ const Rate = ({ rate }) => {
           columnLayout="twoColumn"
           size="small"
         />
-        <MostReadLink
-          dir="ltr"
-          href="/bbc.co.uk/news/articles/27051997"
-          service="news"
-          script={latin}
-          title={title2}
-        />
+        <MostReadLink dir="ltr" service="news" script={latin} title={title2} />
       </MostReadItemWrapper>
+      <Rating size="large" />
+
       <MostReadItemWrapper dir="ltr" children columnLayout="twoColumn">
         <MostReadRank
           service="news"
@@ -70,14 +62,10 @@ const Rate = ({ rate }) => {
           columnLayout="twoColumn"
           size="small"
         />
-        <MostReadLink
-          dir="ltr"
-          href="/bbc.co.uk/news/articles/27051997"
-          service="news"
-          script={latin}
-          title={title3}
-        />
+        <MostReadLink dir="ltr" service="news" script={latin} title={title3} />
       </MostReadItemWrapper>
+      <Rating size="large" />
+
       <MostReadItemWrapper dir="ltr" children columnLayout="twoColumn">
         <MostReadRank
           service="news"
@@ -88,14 +76,10 @@ const Rate = ({ rate }) => {
           columnLayout="twoColumn"
           size="small"
         />
-        <MostReadLink
-          dir="ltr"
-          href="/bbc.co.uk/news/articles/27051997"
-          service="news"
-          script={latin}
-          title={title4}
-        />
+        <MostReadLink dir="ltr" service="news" script={latin} title={title4} />
       </MostReadItemWrapper>
+      <Rating size="large" />
+
       <MostReadItemWrapper dir="ltr" children columnLayout="twoColumn">
         <MostReadRank
           service="news"
@@ -106,14 +90,9 @@ const Rate = ({ rate }) => {
           columnLayout="twoColumn"
           size="small"
         />
-        <MostReadLink
-          dir="ltr"
-          href="/bbc.co.uk/news/articles/27051997"
-          service="news"
-          script={latin}
-          title={title5}
-        />
+        <MostReadLink dir="ltr" service="news" script={latin} title={title5} />
       </MostReadItemWrapper>
+      <Rating size="large" />
     </div>
   );
 };
