@@ -1,7 +1,6 @@
-import Data from "./Data";
-import React, { useState } from "react";
+import React from "react";
 import NavBar from "./NavBar";
-import { UsefulLink } from "@bbc/psammead-useful-links";
+
 function App() {
   return (
     <div className="App">

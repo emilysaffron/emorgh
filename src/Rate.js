@@ -1,18 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import getData from "./FetchArticles";
 import { latin } from "@bbc/gel-foundations/scripts";
-import { StoryPromoLi, StoryPromoUl } from "@bbc/psammead-story-promo-list";
+
 import { Headline } from "@bbc/psammead-headings";
 import {
-  MostReadList,
   MostReadLink,
   MostReadRank,
   MostReadItemWrapper,
 } from "@bbc/psammead-most-read";
 import { Rating } from "@material-ui/lab";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import { Router, Link } from "@reach/router";
-import Submitted from "./Submitted";
+import { Link } from "@reach/router";
+
 const Rate = ({ rate }) => {
   const title1 = getData(1)[0].model.text;
   const title2 = getData(2)[0].model.text;
