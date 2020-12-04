@@ -3,14 +3,15 @@ import { Headline } from "@bbc/psammead-headings";
 import Paragraph from "@bbc/psammead-paragraph";
 import Image from "@bbc/psammead-image";
 import BulletedList, { BulletedListItem } from "@bbc/psammead-bulleted-list";
-import Figure from "@bbc/psammead-figure";
 import Grid from "@bbc/psammead-grid";
 import styled from "@emotion/styled";
 import getData from "./FetchArticles";
 
-const StyledFigure = styled(Figure)`
-  width: 500px;
-  height: 500px;
+const StyledImage = styled(Image)`
+  object-fit: cover;
+  width: 62.5%;
+  max-height: 62.5%;
+  padding-bottom: 1rem;
 `;
 function Data({ num }) {
   const [article, setArticle] = useState("");
@@ -87,7 +88,7 @@ function Data({ num }) {
                   group5: 5,
                 }}
               >
-                <Paragraph>{item.model.text}</Paragraph>;
+                <Paragraph>{item.model.text}</Paragraph>
               </Grid>
             );
           case "image":
@@ -111,9 +112,7 @@ function Data({ num }) {
                   group5: 8,
                 }}
               >
-                <StyledFigure>
-                  <Image src={item.model.url} alt={item.model.altText} />
-                </StyledFigure>
+                <StyledImage src={item.model.url} alt={item.model.altText} />
               </Grid>
             );
 
