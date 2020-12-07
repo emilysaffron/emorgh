@@ -8,6 +8,8 @@ import {
   MostReadRank,
   MostReadItemWrapper,
 } from "@bbc/psammead-most-read";
+import Grid from "@bbc/psammead-grid";
+
 import { Rating } from "@material-ui/lab";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { Link } from "@reach/router";
@@ -20,7 +22,44 @@ const Rate = ({ rate }) => {
   const title5 = getData(5)[0].model.text;
 
   return (
-    <div>
+    <Grid
+      enableGelGutters
+      columns={{
+        group0: 8,
+        group1: 8,
+        group2: 8,
+        group3: 8,
+        group4: 8,
+        group5: 8,
+      }}
+      margins={{
+        group0: true,
+        group1: true,
+        group2: true,
+        group3: true,
+        group4: true,
+        group5: true,
+      }}
+    >
+      <Grid
+        item
+        startOffset={{
+          group0: 2,
+          group1: 2,
+          group2: 2,
+          group3: 2,
+          group4: 2,
+          group5: 2,
+        }}
+        columns={{
+          group0: 8,
+          group1: 8,
+          group2: 8,
+          group3: 8,
+          group4: 8,
+          group5: 8,
+        }}
+      >
       <Headline>Rank The Articles</Headline>
       <MostReadItemWrapper dir="ltr" children columnLayout="twoColumn">
         <MostReadRank
@@ -95,7 +134,8 @@ const Rate = ({ rate }) => {
           <button>Submit</button>
         </Link>
       </div>
-    </div>
+      </Grid>
+    </Grid>
   );
 };
 export default Rate;
