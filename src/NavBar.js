@@ -40,13 +40,29 @@ function NavBar() {
             <Link to={"/"}>
               <NavigationLi>Home</NavigationLi>
             </Link>
-            <Link to={"/article"}>
-              <NavigationLi onClick={loadNextArticle}>Next</NavigationLi>
+            {pageNo < 5 ? (
+              <Link to={`/article${pageNo + 1}`}>
+                <NavigationLi onClick={loadNextArticle}>Next</NavigationLi>
+              </Link>
+            ) : (
+              <Link to={`/article${pageNo}`}>
+                <NavigationLi onClick={loadNextArticle}>Next</NavigationLi>
+              </Link>
+            )}
+            {pageNo > 1 ? (
+              <Link to={`/article${pageNo - 1}`}>
+                <NavigationLi onClick={loadPreviousArticle}>
+                  Previous
+                </NavigationLi>
+              </Link>
+            ) : (
+              <Link to={`/article${pageNo}`}>
+                <NavigationLi onClick={loadPreviousArticle}>
+                  Previous
+                </NavigationLi>
+              </Link>
+            )}
 
-              <NavigationLi onClick={loadPreviousArticle}>
-                Previous
-              </NavigationLi>
-            </Link>
             <Link to={"/rate"} onClick={toggleRate}>
               <NavigationLi>Rate the Articles</NavigationLi>
             </Link>
@@ -55,7 +71,7 @@ function NavBar() {
       </Navigation>
 
       <Router>
-        <Data exact path={"/article"} num={pageNo} />
+        <Data exact path={`/article${pageNo}`} num={pageNo} />
       </Router>
       <Router>
         <Rate exact path={"/rate"} rate={rate} />
