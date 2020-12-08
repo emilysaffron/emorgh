@@ -1,6 +1,6 @@
 import Data from "./Data";
 import React, { useState } from "react";
-
+import Home from "./Home";
 import { Router, Link } from "@reach/router";
 
 import { ScrollableNavigation } from "@bbc/psammead-navigation/scrollable";
@@ -13,7 +13,7 @@ import Rate from "./Rate";
 import Submitted from "./Submitted";
 
 function NavBar() {
-  const [pageNo, updatePage] = useState(1);
+  const [pageNo, updatePage] = useState(0);
   const [rate, updateRate] = useState(false);
   const loadNextArticle = () => {
     if (pageNo < 5) {
@@ -37,9 +37,12 @@ function NavBar() {
       <Navigation>
         <ScrollableNavigation>
           <NavigationUl>
-            <NavigationLi>Home</NavigationLi>
-            <NavigationLi onClick={loadNextArticle}>Next</NavigationLi>
             <Link to={"/"}>
+              <NavigationLi>Home</NavigationLi>
+            </Link>
+            <Link to={"/article"}>
+              <NavigationLi onClick={loadNextArticle}>Next</NavigationLi>
+
               <NavigationLi onClick={loadPreviousArticle}>
                 Previous
               </NavigationLi>
@@ -52,12 +55,15 @@ function NavBar() {
       </Navigation>
 
       <Router>
-        <Data exact path={"/"} num={pageNo} />
+        <Data exact path={"/article"} num={pageNo} />
       </Router>
       <Router>
         <Rate exact path={"/rate"} rate={rate} />
       </Router>
 
+      <Router>
+        <Home exact path={"/"} />
+      </Router>
       <Router>
         <Submitted exact path={"/submitted"} rate={rate} />
       </Router>
