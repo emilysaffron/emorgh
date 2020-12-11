@@ -5,6 +5,7 @@ import Image from "@bbc/psammead-image";
 import BulletedList, { BulletedListItem } from "@bbc/psammead-bulleted-list";
 import Grid from "@bbc/psammead-grid";
 import styled from "@emotion/styled";
+// Nest this within a 'helpers' folder as it isn't a visual component
 import getData from "./FetchArticles";
 
 const StyledImage = styled(Image)`
@@ -13,9 +14,12 @@ const StyledImage = styled(Image)`
   max-height: 62.5%;
   padding-bottom: 1rem;
 `;
+
+// This component name :facepalm: - maybe 'ArticleRenderer'?
 function Data({ num }) {
   const [article, setArticle] = useState("");
 
+  // Good to have the "data fetching" at this level - but thereafter it should just be passing that data down to another component, which handles the actual rendering of the elements.
   useEffect(() => {
     setArticle(getData(num));
   }, [num]);
@@ -43,6 +47,7 @@ function Data({ num }) {
       {article.map((item) => {
         switch (item.type) {
           case "heading":
+            // Render a Heading component
             return (
               <Grid
                 item
@@ -68,6 +73,7 @@ function Data({ num }) {
             );
 
           case "paragraph":
+            // Render a Paragraph component ... same for Image, List etc below
             return (
               <Grid
                 item

@@ -44,6 +44,7 @@ const Home = () => {
         <Headline>Article Rater</Headline>
 
         <SubHeading>Read and Rate the Following Articles</SubHeading>
+        {/* :blob-excited: */}
       </Grid>
     </Grid>
   );
