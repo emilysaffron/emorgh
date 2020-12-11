@@ -15,11 +15,12 @@ const StyledImage = styled(Image)`
   padding-bottom: 1rem;
 `;
 
-// This component name :facepalm: - maybe 'ArticleRenderer'?
+// This component name :facepalm: - maybe 'ArticlePage', which returns an 'ArticleRenderer'?
 function Data({ num }) {
   const [article, setArticle] = useState("");
 
-  // Good to have the "data fetching" at this level - but thereafter it should just be passing that data down to another component, which handles the actual rendering of the elements.
+  // Good to have the "data fetching" at this level - but thereafter it should just be passing that data down to another component,
+  // which handles the actual rendering of the elements.
   useEffect(() => {
     setArticle(getData(num));
   }, [num]);

@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <NavBar />
+      {/* If adding routes here - can they be their own component? */}
     </div>
   );
 }

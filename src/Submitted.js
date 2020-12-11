@@ -22,8 +22,18 @@ const Submitted = () => {
     }, 1000);
   }, []);
 
+  // Can you write a getGridGroups helper to reduce the grid 'bulk' on each page?
+  // const getGridGroups = ([group0, group1, group2, group3, group4, group5]) => {
+  //   return {
+  //     group0: group0,
+  //     group1: group1,
+  //     ..
+  //     group5: group5
+  //   };
+  // };
+
   return loading ? (
-    // This should be its own <Loading> component
+    // This could be its own <Loading> component
     <Grid
       enableGelGutters
       columns={{

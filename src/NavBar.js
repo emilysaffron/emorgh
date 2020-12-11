@@ -13,8 +13,12 @@ import Rate from "./Rate";
 import Submitted from "./Submitted";
 
 function NavBar() {
+  // Maybe be more explicit here that pageNo is 'currentPageNumber'
+  // no === 'number'
+  // number === 'number'
   const [pageNo, updatePage] = useState(0);
   // What is 'rate'? Why is it within 'NavBar'?
+  // this 'rate' has the same name as a component 'Rate'
   const [rate, updateRate] = useState(false);
   const loadNextArticle = () => {
     if (pageNo < 5) {
@@ -42,6 +46,7 @@ function NavBar() {
               <NavigationLi>Home</NavigationLi>
             </Link>
             {/* Next/Previous links - can this be improved by passing a single 'PageNav' component some props? */}
+            {/* Can the pageNo calc be handled in its own function to remove the ternary here? */}
             {pageNo < 5 ? (
               <Link to={`/article${pageNo + 1}`}>
                 <NavigationLi onClick={loadNextArticle}>Next</NavigationLi>
