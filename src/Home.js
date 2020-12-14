@@ -152,6 +152,8 @@ const Home = () => {
             />
           </MostReadItemWrapper>
         </Grid>
+        <SubHeading>Read and Rate the Following Articles</SubHeading>
+        {/* :blob-excited: */}
       </Grid>
       <Router>
         <Data exact path="/article" num={1} />
