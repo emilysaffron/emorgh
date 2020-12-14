@@ -5,13 +5,14 @@ import styled from "@emotion/styled";
 import Loader from "react-loader-spinner";
 import tick from "./tick.png";
 
-
 const StyledImg = styled.img`
   margin-top: 300px;
 `;
 const StyledLoader = styled(Loader)`
   margin-top: 300px;
 `;
+
+// Component name - what does 'Submitted' mean? Is it a page?
 const Submitted = () => {
   const [loading, updateLoading] = useState(true);
 
@@ -21,10 +22,22 @@ const Submitted = () => {
     }, 1000);
   }, []);
 
+  // Can you write a getGridGroups helper to reduce the grid 'bulk' on each page?
+  // const getGridGroups = ([group0, group1, group2, group3, group4, group5]) => {
+  //   return {
+  //     group0: group0,
+  //     group1: group1,
+  //     ..
+  //     group5: group5
+  //   };
+  // };
+
   return loading ? (
+    // This could be its own <Loading> component
     <Grid
       enableGelGutters
       columns={{
+        // these values are, I think, different break points - experiment with that.
         group0: 7,
         group1: 7,
         group2: 7,

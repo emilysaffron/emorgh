@@ -2,6 +2,7 @@ const getData = (num) => {
   let data = "";
 
   let article = "";
+  // This can be made much simpler - how can you pass num dynamically into the string?
   switch (num) {
     case 1:
       data = require("./data/article-1.json");
