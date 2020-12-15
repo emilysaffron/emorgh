@@ -16,7 +16,7 @@ const StyledImage = styled(Image)`
 `;
 
 // This component name :facepalm: - maybe 'ArticlePage', which returns an 'ArticleRenderer'?
-function Data({ num }) {
+function ArticlePage({ num }) {
   const [article, setArticle] = useState("");
 
   // Good to have the "data fetching" at this level - but thereafter it should just be passing that data down to another component,
@@ -166,4 +166,4 @@ function Data({ num }) {
   );
 }
 
-export default Data;
+export default ArticlePage;

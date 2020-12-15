@@ -1,4 +1,4 @@
-import Data from "./Data";
+import ArticlePage from "./ArticlePage";
 import React, { useState } from "react";
 import Home from "./Home";
 import { Router, Link } from "@reach/router";
@@ -80,7 +80,7 @@ function NavBar() {
       {/* These are not part of the nav bar- they should be within App. Also - what about creating a separate 'Pages' 
       folder that holds each of these page-level components below, to distinguish them from components */}
       <Router>
-        <Data exact path={`/article${pageNo}`} num={pageNo} />
+        <ArticlePage exact path={`/article${pageNo}`} num={pageNo} />
       </Router>
       <Router>
         <Rate exact path={"/rate"} rate={rate} />

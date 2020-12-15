@@ -8,7 +8,7 @@ import {
 import { latin } from "@bbc/gel-foundations/scripts";
 import getData from "./FetchArticles";
 import { Link, Router } from "@reach/router";
-import Data from "./Data";
+import ArticlePage from "./ArticlePage";
 const Home = () => {
   const title1 = getData(1)[0].model.text;
   const title2 = getData(2)[0].model.text;
@@ -152,11 +152,9 @@ const Home = () => {
             />
           </MostReadItemWrapper>
         </Grid>
-        <SubHeading>Read and Rate the Following Articles</SubHeading>
-        {/* :blob-excited: */}
       </Grid>
       <Router>
-        <Data exact path="/article" num={1} />
+        <ArticlePage exact path="/article" num={1} />
       </Router>
     </div>
   );
