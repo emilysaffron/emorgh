@@ -1,6 +1,6 @@
 import ArticlePage from "./ArticlePage";
 import React, { useState } from "react";
-import Home from "./Home";
+import Home from "../Pages/Home";
 import { Router, Link } from "@reach/router";
 
 import { ScrollableNavigation } from "@bbc/psammead-navigation/scrollable";
@@ -9,8 +9,8 @@ import Navigation, {
   NavigationLi,
 } from "@bbc/psammead-navigation";
 
-import Rate from "./Rate";
-import Submitted from "./Submitted";
+import Rate from "../Pages/Rate";
+import Submitted from "../Pages/Submitted";
 
 function NavBar() {
   // Maybe be more explicit here that pageNo is 'currentPageNumber'

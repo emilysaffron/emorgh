@@ -1,5 +1,5 @@
 import React from "react";
-import getData from "./FetchArticles";
+import getData from "../Helpers/FetchArticles";
 import { latin } from "@bbc/gel-foundations/scripts";
 
 import { Headline } from "@bbc/psammead-headings";

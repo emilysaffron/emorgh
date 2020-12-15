@@ -5,7 +5,7 @@ import Photo from "./Image";
 import List from "./List";
 import Grid from "@bbc/psammead-grid";
 // Nest this within a 'helpers' folder as it isn't a visual component
-import getData from "./FetchArticles";
+import getData from "../Helpers/FetchArticles";
 
 // This component name :facepalm: - maybe 'ArticlePage', which returns an 'ArticleRenderer'? DONE
 function ArticlePage({ num }) {
@@ -40,11 +40,11 @@ function ArticlePage({ num }) {
       {article.map((item) => {
         switch (item.type) {
           case "heading":
-            // Render a Heading component
+            // Render a Heading component DONE
             return <Heading text={item.model.text} />;
 
           case "paragraph":
-            // Render a Paragraph component ... same for Image, List etc below
+            // Render a Paragraph component ... same for Image, List etc below DONE
             return <TextBody text={item.model.text} />;
           case "image":
             return <Photo url={item.model.url} alt={item.model.altText} />;

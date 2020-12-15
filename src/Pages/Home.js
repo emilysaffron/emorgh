@@ -6,9 +6,9 @@ import {
   MostReadItemWrapper,
 } from "@bbc/psammead-most-read";
 import { latin } from "@bbc/gel-foundations/scripts";
-import getData from "./FetchArticles";
+import getData from "../Helpers/FetchArticles";
 import { Link, Router } from "@reach/router";
-import ArticlePage from "./ArticlePage";
+import ArticlePage from "../Visual Components/ArticlePage";
 const Home = () => {
   const title1 = getData(1)[0].model.text;
   const title2 = getData(2)[0].model.text;
