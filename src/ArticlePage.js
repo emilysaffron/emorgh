@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Heading from "./Heading";
 import { Headline } from "@bbc/psammead-headings";
 import Paragraph from "@bbc/psammead-paragraph";
 import Image from "@bbc/psammead-image";
@@ -15,7 +16,7 @@ const StyledImage = styled(Image)`
   padding-bottom: 1rem;
 `;
 
-// This component name :facepalm: - maybe 'ArticlePage', which returns an 'ArticleRenderer'?
+// This component name :facepalm: - maybe 'ArticlePage', which returns an 'ArticleRenderer'? DONE
 function ArticlePage({ num }) {
   const [article, setArticle] = useState("");
 
@@ -49,29 +50,7 @@ function ArticlePage({ num }) {
         switch (item.type) {
           case "heading":
             // Render a Heading component
-            return (
-              <Grid
-                item
-                startOffset={{
-                  group0: 2,
-                  group1: 2,
-                  group2: 2,
-                  group3: 2,
-                  group4: 2,
-                  group5: 2,
-                }}
-                columns={{
-                  group0: 8,
-                  group1: 8,
-                  group2: 8,
-                  group3: 8,
-                  group4: 8,
-                  group5: 8,
-                }}
-              >
-                <Headline>{item.model.text}</Headline>
-              </Grid>
-            );
+            return <Heading text={item.model.text} />;
 
           case "paragraph":
             // Render a Paragraph component ... same for Image, List etc below
