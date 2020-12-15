@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Heading from "./Heading";
-import { Headline } from "@bbc/psammead-headings";
-import Paragraph from "@bbc/psammead-paragraph";
+import TextBody from "./Paragraph";
 import Image from "@bbc/psammead-image";
 import BulletedList, { BulletedListItem } from "@bbc/psammead-bulleted-list";
 import Grid from "@bbc/psammead-grid";
@@ -54,29 +53,7 @@ function ArticlePage({ num }) {
 
           case "paragraph":
             // Render a Paragraph component ... same for Image, List etc below
-            return (
-              <Grid
-                item
-                startOffset={{
-                  group0: 2,
-                  group1: 2,
-                  group2: 2,
-                  group3: 2,
-                  group4: 2,
-                  group5: 2,
-                }}
-                columns={{
-                  group0: 5,
-                  group1: 5,
-                  group2: 5,
-                  group3: 5,
-                  group4: 5,
-                  group5: 5,
-                }}
-              >
-                <Paragraph>{item.model.text}</Paragraph>
-              </Grid>
-            );
+            return <TextBody text={item.model.text} />;
           case "image":
             return (
               <Grid
