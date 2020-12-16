@@ -7,46 +7,19 @@ import Grid from "@bbc/psammead-grid";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { Link } from "@reach/router";
 import RankableItem from "../Components/RankableItem";
+import getGridGroups from "../Helpers/GetGridGroups";
 
 const RankingPage = () => {
   return (
     <Grid
       enableGelGutters
-      columns={{
-        group0: 8,
-        group1: 8,
-        group2: 8,
-        group3: 8,
-        group4: 8,
-        group5: 8,
-      }}
-      margins={{
-        group0: true,
-        group1: true,
-        group2: true,
-        group3: true,
-        group4: true,
-        group5: true,
-      }}
+      columns={getGridGroups([8, 8, 8, 8, 8, 8])}
+      margins={getGridGroups([true, true, true, true, true, true])}
     >
       <Grid
         item
-        startOffset={{
-          group0: 2,
-          group1: 2,
-          group2: 2,
-          group3: 2,
-          group4: 2,
-          group5: 2,
-        }}
-        columns={{
-          group0: 8,
-          group1: 8,
-          group2: 8,
-          group3: 8,
-          group4: 8,
-          group5: 8,
-        }}
+        startOffset={getGridGroups([2, 2, 2, 2, 2, 2])}
+        columns={getGridGroups([8, 8, 8, 8, 8, 8])}
       >
         <Headline>Rank The Articles</Headline>
 
