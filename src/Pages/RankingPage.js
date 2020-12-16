@@ -1,17 +1,12 @@
 import React from "react";
-import { latin } from "@bbc/gel-foundations/scripts";
-import fetchTitle from "../Helpers/FetchTitle";
+
 import { Headline } from "@bbc/psammead-headings";
-import {
-  MostReadLink,
-  MostReadRank,
-  MostReadItemWrapper,
-} from "@bbc/psammead-most-read";
+
 import Grid from "@bbc/psammead-grid";
 
-import { Rating } from "@material-ui/lab";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { Link } from "@reach/router";
+import RankableItem from "../Components/RankableItem";
 
 const RankingPage = () => {
   return (
@@ -55,99 +50,11 @@ const RankingPage = () => {
       >
         <Headline>Rank The Articles</Headline>
         {/* Each of these items should be its own component */}
-        <MostReadItemWrapper dir="ltr" children columnLayout="twoColumn">
-          <MostReadRank
-            service="news"
-            script={latin}
-            listIndex={1}
-            numberOfItems={1}
-            dir="ltr"
-            columnLayout="twoColumn"
-            size="small"
-          />
-          <MostReadLink
-            dir="ltr"
-            service="news"
-            script={latin}
-            title={fetchTitle(1)}
-          />
-        </MostReadItemWrapper>
-        <Rating size="large" />
-        <MostReadItemWrapper dir="ltr" children columnLayout="twoColumn">
-          <MostReadRank
-            service="news"
-            script={latin}
-            listIndex={2}
-            numberOfItems={1}
-            dir="ltr"
-            columnLayout="twoColumn"
-            size="small"
-          />
-          <MostReadLink
-            dir="ltr"
-            service="news"
-            script={latin}
-            title={fetchTitle(2)}
-          />
-        </MostReadItemWrapper>
-        <Rating size="large" />
-
-        <MostReadItemWrapper dir="ltr" children columnLayout="twoColumn">
-          <MostReadRank
-            service="news"
-            script={latin}
-            listIndex={3}
-            numberOfItems={1}
-            dir="ltr"
-            columnLayout="twoColumn"
-            size="small"
-          />
-          <MostReadLink
-            dir="ltr"
-            service="news"
-            script={latin}
-            title={fetchTitle(3)}
-          />
-        </MostReadItemWrapper>
-        <Rating size="large" />
-
-        <MostReadItemWrapper dir="ltr" children columnLayout="twoColumn">
-          <MostReadRank
-            service="news"
-            script={latin}
-            listIndex={4}
-            numberOfItems={1}
-            dir="ltr"
-            columnLayout="twoColumn"
-            size="small"
-          />
-          <MostReadLink
-            dir="ltr"
-            service="news"
-            script={latin}
-            title={fetchTitle(4)}
-          />
-        </MostReadItemWrapper>
-        <Rating size="large" />
-
-        <MostReadItemWrapper dir="ltr" children columnLayout="twoColumn">
-          <MostReadRank
-            service="news"
-            script={latin}
-            listIndex={5}
-            numberOfItems={1}
-            dir="ltr"
-            columnLayout="twoColumn"
-            size="small"
-          />
-          <MostReadLink
-            dir="ltr"
-            service="news"
-            script={latin}
-            title={fetchTitle(5)}
-          />
-        </MostReadItemWrapper>
-        <Rating size="large" />
+        <RankableItem index={1} />
+        <RankableItem index={2} />
+        <RankableItem index={3} />
+        <RankableItem index={4} />
+        <RankableItem index={5} />
         <div>
           <Link to={"/submitted"}>
             <button>Submit</button>
