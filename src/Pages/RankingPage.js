@@ -1,7 +1,6 @@
 import React from "react";
-import getData from "../Helpers/FetchArticles";
 import { latin } from "@bbc/gel-foundations/scripts";
-
+import fetchTitle from "../Helpers/FetchTitle";
 import { Headline } from "@bbc/psammead-headings";
 import {
   MostReadLink,
@@ -14,15 +13,7 @@ import { Rating } from "@material-ui/lab";
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { Link } from "@reach/router";
 
-// Again - confusing component naming. Rate wut? It's a page where you rate articles.
 const RankingPage = () => {
-  // Can this be handled by a function that takes in a num and returns dynamic data based on it?
-  const title1 = getData(1)[0].model.text;
-  const title2 = getData(2)[0].model.text;
-  const title3 = getData(3)[0].model.text;
-  const title4 = getData(4)[0].model.text;
-  const title5 = getData(5)[0].model.text;
-
   return (
     <Grid
       enableGelGutters
@@ -78,7 +69,7 @@ const RankingPage = () => {
             dir="ltr"
             service="news"
             script={latin}
-            title={title1}
+            title={fetchTitle(1)}
           />
         </MostReadItemWrapper>
         <Rating size="large" />
@@ -96,7 +87,7 @@ const RankingPage = () => {
             dir="ltr"
             service="news"
             script={latin}
-            title={title2}
+            title={fetchTitle(2)}
           />
         </MostReadItemWrapper>
         <Rating size="large" />
@@ -115,7 +106,7 @@ const RankingPage = () => {
             dir="ltr"
             service="news"
             script={latin}
-            title={title3}
+            title={fetchTitle(3)}
           />
         </MostReadItemWrapper>
         <Rating size="large" />
@@ -134,7 +125,7 @@ const RankingPage = () => {
             dir="ltr"
             service="news"
             script={latin}
-            title={title4}
+            title={fetchTitle(4)}
           />
         </MostReadItemWrapper>
         <Rating size="large" />
@@ -153,7 +144,7 @@ const RankingPage = () => {
             dir="ltr"
             service="news"
             script={latin}
-            title={title5}
+            title={fetchTitle(5)}
           />
         </MostReadItemWrapper>
         <Rating size="large" />
