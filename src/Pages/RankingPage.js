@@ -15,7 +15,7 @@ import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { Link } from "@reach/router";
 
 // Again - confusing component naming. Rate wut? It's a page where you rate articles.
-const Rate = ({ rate }) => {
+const RankingPage = () => {
   // Can this be handled by a function that takes in a num and returns dynamic data based on it?
   const title1 = getData(1)[0].model.text;
   const title2 = getData(2)[0].model.text;
@@ -166,4 +166,4 @@ const Rate = ({ rate }) => {
     </Grid>
   );
 };
-export default Rate;
+export default RankingPage;

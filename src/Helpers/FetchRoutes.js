@@ -1,5 +1,5 @@
 import { Router } from "@reach/router";
-import Rate from "../Pages/Rate";
+import RankingPage from "../Pages/RankingPage";
 import Home from "../Pages/Home";
 import Submitted from "../Pages/Submitted";
 import ArticlePage from "../Pages/ArticlePage";
@@ -7,7 +7,7 @@ const createRoutes = (currentPageNumber) => {
   return (
     <div>
       <Router>
-        <Rate exact path={"/rate"} />
+        <RankingPage exact path={"/rate"} />
       </Router>
       <Router>
         <Home exact path={"/"} />
