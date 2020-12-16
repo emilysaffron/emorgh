@@ -16,11 +16,9 @@ function NavBar() {
   // Maybe be more explicit here that pageNo is 'currentPageNumber'
   // no === 'number'
   // number === 'number'   DONE
-  
+
   const [currentPageNumber, updatePage] = useState(0);
-  // What is 'rate'? Why is it within 'NavBar'?
-  // this 'rate' has the same name as a component 'Rate'
-  const [rate, updateRate] = useState(false);
+
   const loadNextArticle = () => {
     if (currentPageNumber < 5) {
       updatePage(currentPageNumber + 1);
@@ -28,14 +26,9 @@ function NavBar() {
   };
 
   const loadPreviousArticle = () => {
-    if (currentPageNumber > 1 && rate === false) {
+    if (currentPageNumber > 1) {
       updatePage(currentPageNumber - 1);
     }
-    updateRate(false);
-  };
-
-  const toggleRate = () => {
-    updateRate(true);
   };
 
   return (
@@ -71,7 +64,7 @@ function NavBar() {
               </Link>
             )}
 
-            <Link to={"/rate"} onClick={toggleRate}>
+            <Link to={"/rate"}>
               <NavigationLi>Rate the Articles</NavigationLi>
             </Link>
           </NavigationUl>
@@ -81,17 +74,21 @@ function NavBar() {
       {/* These are not part of the nav bar- they should be within App. Also - what about creating a separate 'Pages' 
       folder that holds each of these page-level components below, to distinguish them from components */}
       <Router>
-        <ArticlePage exact path={`/article${currentPageNumber}`} num={currentPageNumber} />
+        <ArticlePage
+          exact
+          path={`/article${currentPageNumber}`}
+          num={currentPageNumber}
+        />
       </Router>
       <Router>
-        <Rate exact path={"/rate"} rate={rate} />
+        <Rate exact path={"/rate"} />
       </Router>
 
       <Router>
         <Home exact path={"/"} />
       </Router>
       <Router>
-        <Submitted exact path={"/submitted"} rate={rate} />
+        <Submitted exact path={"/submitted"} />
       </Router>
     </div>
   );
