@@ -7,7 +7,7 @@ const TextBody = ({ text }) => {
     <Grid
       item
       startOffset={getGridGroups([2, 2, 2, 2, 2, 2])}
-      columns={getGridGroups([8, 8, 8, 8, 8, 8])}
+      columns={getGridGroups([5, 5, 5, 5, 5, 5])}
     >
       <Paragraph>{text}</Paragraph>
     </Grid>
