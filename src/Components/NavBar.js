@@ -11,7 +11,7 @@ import Navigation, {
 
 import Rate from "../Pages/Rate";
 import Submitted from "../Pages/Submitted";
-
+import PageNav from "./PageNav";
 function NavBar() {
   // Maybe be more explicit here that pageNo is 'currentPageNumber'
   // no === 'number'
@@ -39,30 +39,20 @@ function NavBar() {
             <Link to={"/"}>
               <NavigationLi>Home</NavigationLi>
             </Link>
-            {/* Next/Previous links - can this be improved by passing a single 'PageNav' component some props? */}
+            {/* Next/Previous links - can this be improved by passing a single 'PageNav' component some props? DONE */}
             {/* Can the currentPageNumber calc be handled in its own function to remove the ternary here? */}
-            {currentPageNumber < 5 ? (
-              <Link to={`/article${currentPageNumber + 1}`}>
-                <NavigationLi onClick={loadNextArticle}>Next</NavigationLi>
-              </Link>
-            ) : (
-              <Link to={`/article${currentPageNumber}`}>
-                <NavigationLi onClick={loadNextArticle}>Next</NavigationLi>
-              </Link>
-            )}
-            {currentPageNumber > 1 ? (
-              <Link to={`/article${currentPageNumber - 1}`}>
-                <NavigationLi onClick={loadPreviousArticle}>
-                  Previous
-                </NavigationLi>
-              </Link>
-            ) : (
-              <Link to={`/article${currentPageNumber}`}>
-                <NavigationLi onClick={loadPreviousArticle}>
-                  Previous
-                </NavigationLi>
-              </Link>
-            )}
+
+            <PageNav
+              currentPageNumber={currentPageNumber}
+              onClick={loadPreviousArticle}
+              direction="Previous"
+            />
+
+            <PageNav
+              currentPageNumber={currentPageNumber}
+              onClick={loadNextArticle}
+              direction="Next"
+            />
 
             <Link to={"/rate"}>
               <NavigationLi>Rate the Articles</NavigationLi>
