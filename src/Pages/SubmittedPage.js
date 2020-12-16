@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { SubHeading } from "@bbc/psammead-headings";
 import Grid from "@bbc/psammead-grid";
+import getGridGroups from "../Helpers/GetGridGroups";
 import styled from "@emotion/styled";
 import Loader from "react-loader-spinner";
 import tick from "./tick.png";
@@ -12,7 +13,6 @@ const StyledLoader = styled(Loader)`
   margin-top: 300px;
 `;
 
-// Component name - what does 'Submitted' mean? Is it a page?
 const SubmittedPage = () => {
   const [loading, updateLoading] = useState(true);
 
@@ -36,42 +36,15 @@ const SubmittedPage = () => {
     // This could be its own <Loading> component
     <Grid
       enableGelGutters
-      columns={{
-        // these values are, I think, different break points - experiment with that.
-        group0: 7,
-        group1: 7,
-        group2: 7,
-        group3: 7,
-        group4: 7,
-        group5: 7,
-      }}
-      margins={{
-        group0: true,
-        group1: true,
-        group2: true,
-        group3: true,
-        group4: true,
-        group5: true,
-      }}
+      columns={
+        getGridGroups([7, 7, 7, 7, 7, 7]) // these values are, I think, different break points - experiment with that.
+      }
+      margins={getGridGroups([true, true, true, true, true, true])}
     >
       <Grid
         item
-        startOffset={{
-          group0: 4,
-          group1: 4,
-          group2: 4,
-          group3: 4,
-          group4: 4,
-          group5: 4,
-        }}
-        columns={{
-          group0: 8,
-          group1: 8,
-          group2: 8,
-          group3: 8,
-          group4: 8,
-          group5: 8,
-        }}
+        startOffset={getGridGroups([4, 4, 4, 4, 4, 4])}
+        columns={getGridGroups([8, 8, 8, 8, 8, 8])}
       >
         <StyledLoader
           type="ThreeDots"
@@ -84,41 +57,13 @@ const SubmittedPage = () => {
   ) : (
     <Grid
       enableGelGutters
-      columns={{
-        group0: 7,
-        group1: 7,
-        group2: 7,
-        group3: 7,
-        group4: 7,
-        group5: 7,
-      }}
-      margins={{
-        group0: true,
-        group1: true,
-        group2: true,
-        group3: true,
-        group4: true,
-        group5: true,
-      }}
+      columns={getGridGroups([7, 7, 7, 7, 7, 7])}
+      margins={getGridGroups([true, true, true, true, true, true])}
     >
       <Grid
         item
-        startOffset={{
-          group0: 4,
-          group1: 4,
-          group2: 4,
-          group3: 4,
-          group4: 4,
-          group5: 4,
-        }}
-        columns={{
-          group0: 8,
-          group1: 8,
-          group2: 8,
-          group3: 8,
-          group4: 8,
-          group5: 8,
-        }}
+        startOffset={getGridGroups([4, 4, 4, 4, 4, 4])}
+        columns={getGridGroups([8, 8, 8, 8, 8, 8])}
       >
         <StyledImg src={tick} height="100px" width="100px" alt="tick" />
         <SubHeading>Submitted</SubHeading>
