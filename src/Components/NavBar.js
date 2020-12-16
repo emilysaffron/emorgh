@@ -9,10 +9,6 @@ import Navigation, {
 
 import PageNav from "./PageNav";
 function NavBar({ currentPageNumber, updatePage }) {
-  // Maybe be more explicit here that pageNo is 'currentPageNumber'
-  // no === 'number'
-  // number === 'number'   DONE
-
   const loadNextArticle = () => {
     if (currentPageNumber < 5) {
       updatePage(currentPageNumber + 1);
@@ -33,8 +29,6 @@ function NavBar({ currentPageNumber, updatePage }) {
             <Link to={"/"}>
               <NavigationLi>Home</NavigationLi>
             </Link>
-            {/* Next/Previous links - can this be improved by passing a single 'PageNav' component some props? DONE */}
-            {/* Can the currentPageNumber calc be handled in its own function to remove the ternary here? */}
 
             <PageNav
               currentPageNumber={currentPageNumber}

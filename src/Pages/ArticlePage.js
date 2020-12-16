@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Heading from "../Components/Heading";
-import TextBody from "../Components/Paragraph";
-import Photo from "../Components/Image";
-import List from "../Components/List";
 import Grid from "@bbc/psammead-grid";
-// Nest this within a 'helpers' folder as it isn't a visual component
 import getData from "../Helpers/FetchArticles";
-
+import renderArticle from "../Helpers/RenderArticle";
 // This component name :facepalm: - maybe 'ArticlePage', which returns an 'ArticleRenderer'? DONE
 function ArticlePage({ num }) {
   const [article, setArticle] = useState("");
@@ -37,25 +32,7 @@ function ArticlePage({ num }) {
         group5: true,
       }}
     >
-      {article.map((item) => {
-        switch (item.type) {
-          case "heading":
-            // Render a Heading component DONE
-            return <Heading text={item.model.text} />;
-
-          case "paragraph":
-            // Render a Paragraph component ... same for Image, List etc below DONE
-            return <TextBody text={item.model.text} />;
-          case "image":
-            return <Photo url={item.model.url} alt={item.model.altText} />;
-
-          case "list":
-            return <List items={item.model.items} />;
-
-          default:
-            break;
-        }
-      })}
+      {renderArticle(article)}
     </Grid>
   ) : (
     <div>loading ...</div>
