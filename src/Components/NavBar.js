@@ -1,7 +1,5 @@
-import ArticlePage from "../Pages/ArticlePage";
 import React, { useState } from "react";
-import Home from "../Pages/Home";
-import { Router, Link } from "@reach/router";
+import { Link } from "@reach/router";
 
 import { ScrollableNavigation } from "@bbc/psammead-navigation/scrollable";
 import Navigation, {
@@ -9,15 +7,11 @@ import Navigation, {
   NavigationLi,
 } from "@bbc/psammead-navigation";
 
-import Rate from "../Pages/Rate";
-import Submitted from "../Pages/Submitted";
 import PageNav from "./PageNav";
-function NavBar() {
+function NavBar({ currentPageNumber, updatePage }) {
   // Maybe be more explicit here that pageNo is 'currentPageNumber'
   // no === 'number'
   // number === 'number'   DONE
-
-  const [currentPageNumber, updatePage] = useState(0);
 
   const loadNextArticle = () => {
     if (currentPageNumber < 5) {
@@ -60,26 +54,6 @@ function NavBar() {
           </NavigationUl>
         </ScrollableNavigation>
       </Navigation>
-
-      {/* These are not part of the nav bar- they should be within App. Also - what about creating a separate 'Pages' 
-      folder that holds each of these page-level components below, to distinguish them from components */}
-      <Router>
-        <ArticlePage
-          exact
-          path={`/article${currentPageNumber}`}
-          num={currentPageNumber}
-        />
-      </Router>
-      <Router>
-        <Rate exact path={"/rate"} />
-      </Router>
-
-      <Router>
-        <Home exact path={"/"} />
-      </Router>
-      <Router>
-        <Submitted exact path={"/submitted"} />
-      </Router>
     </div>
   );
 }
