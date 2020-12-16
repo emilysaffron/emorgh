@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import { Link } from "@reach/router";
 
 import { ScrollableNavigation } from "@bbc/psammead-navigation/scrollable";
@@ -8,17 +8,14 @@ import Navigation, {
 } from "@bbc/psammead-navigation";
 
 import PageNav from "./PageNav";
+import navigatePages from "../Helpers/NavigatePages";
 function NavBar({ currentPageNumber, updatePage }) {
   const loadNextArticle = () => {
-    if (currentPageNumber < 5) {
-      updatePage(currentPageNumber + 1);
-    }
+    navigatePages(currentPageNumber, "next", updatePage);
   };
 
   const loadPreviousArticle = () => {
-    if (currentPageNumber > 1) {
-      updatePage(currentPageNumber - 1);
-    }
+    navigatePages(currentPageNumber, "previous", updatePage);
   };
 
   return (
