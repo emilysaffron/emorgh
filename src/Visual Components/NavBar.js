@@ -1,4 +1,4 @@
-import ArticlePage from "./ArticlePage";
+import ArticlePage from "../Pages/ArticlePage";
 import React, { useState } from "react";
 import Home from "../Pages/Home";
 import { Router, Link } from "@reach/router";
