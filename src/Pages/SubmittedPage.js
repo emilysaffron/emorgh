@@ -13,7 +13,7 @@ const StyledLoader = styled(Loader)`
 `;
 
 // Component name - what does 'Submitted' mean? Is it a page?
-const Submitted = () => {
+const SubmittedPage = () => {
   const [loading, updateLoading] = useState(true);
 
   useEffect(() => {
@@ -127,4 +127,4 @@ const Submitted = () => {
   );
 };
 
-export default Submitted;
+export default SubmittedPage;

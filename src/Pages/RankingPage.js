@@ -49,7 +49,7 @@ const RankingPage = () => {
         }}
       >
         <Headline>Rank The Articles</Headline>
-        {/* Each of these items should be its own component */}
+
         <RankableItem index={1} />
         <RankableItem index={2} />
         <RankableItem index={3} />
