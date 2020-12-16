@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-import Heading from "../Visual Components/Heading";
-import TextBody from "../Visual Components/Paragraph";
-import Photo from "../Visual Components/Image";
-import List from "../Visual Components/List";
+import Heading from "../Components/Heading";
+import TextBody from "../Components/Paragraph";
+import Photo from "../Components/Image";
+import List from "../Components/List";
 import Grid from "@bbc/psammead-grid";
 // Nest this within a 'helpers' folder as it isn't a visual component
 import getData from "../Helpers/FetchArticles";
