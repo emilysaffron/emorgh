@@ -1,6 +1,6 @@
 import Grid from "@bbc/psammead-grid";
 import Image from "@bbc/psammead-image";
-
+import getGridGroups from "../Helpers/GetGridGroups";
 import styled from "@emotion/styled";
 
 const StyledImage = styled(Image)`
@@ -14,22 +14,8 @@ const Photo = ({ alt, url }) => {
   return (
     <Grid
       item
-      startOffset={{
-        group0: 2,
-        group1: 2,
-        group2: 2,
-        group3: 2,
-        group4: 2,
-        group5: 2,
-      }}
-      columns={{
-        group0: 8,
-        group1: 8,
-        group2: 8,
-        group3: 8,
-        group4: 8,
-        group5: 8,
-      }}
+      startOffset={getGridGroups([2, 2, 2, 2, 2, 2])}
+      columns={getGridGroups([8, 8, 8, 8, 8, 8])}
     >
       <StyledImage src={url} alt={alt} />
     </Grid>
