@@ -1,5 +1,4 @@
 import Grid from "@bbc/psammead-grid";
-import Paragraph from "@bbc/psammead-paragraph";
 import Image from "@bbc/psammead-image";
 
 import styled from "@emotion/styled";
