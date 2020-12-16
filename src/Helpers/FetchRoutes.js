@@ -1,6 +1,5 @@
-import { Router } from "@reach/router";
+import { Router, Redirect } from "@reach/router";
 import RankingPage from "../Pages/RankingPage";
-import Home from "../Pages/Home";
 import SubmittedPage from "../Pages/SubmittedPage";
 import ArticlePage from "../Pages/ArticlePage";
 const createRoutes = (currentPageNumber) => {
@@ -9,9 +8,7 @@ const createRoutes = (currentPageNumber) => {
       <Router>
         <RankingPage exact path={"/rate"} />
       </Router>
-      <Router>
-        <Home exact path={"/"} />
-      </Router>
+
       <Router>
         <SubmittedPage exact path={"/submitted"} />
       </Router>
@@ -22,6 +19,10 @@ const createRoutes = (currentPageNumber) => {
           path={`/article${currentPageNumber}`}
           num={currentPageNumber}
         />
+      </Router>
+
+      <Router>
+        <Redirect noThrow from="/" to={`/article${currentPageNumber}`} />
       </Router>
     </div>
   );

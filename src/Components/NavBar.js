@@ -23,9 +23,7 @@ function NavBar({ currentPageNumber, updatePage }) {
       <Navigation>
         <ScrollableNavigation>
           <NavigationUl>
-            <Link to={"/"}>
-              <NavigationLi>Home</NavigationLi>
-            </Link>
+           
 
             <PageNav
               currentPageNumber={currentPageNumber}
