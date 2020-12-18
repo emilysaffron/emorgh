@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "@reach/router";
-
 import { ScrollableNavigation } from "@bbc/psammead-navigation/scrollable";
 import Navigation, {
   NavigationUl,
@@ -8,8 +7,22 @@ import Navigation, {
 } from "@bbc/psammead-navigation";
 
 import PageNav from "./PageNav";
-import navigatePages from "../Helpers/NavigatePages";
+
 function NavBar({ currentPageNumber, updatePage }) {
+  const navigatePages = (currentPageNumber, direction, updatePage) => {
+    if (direction === "next") {
+      if (currentPageNumber < 5) {
+        updatePage(currentPageNumber + 1);
+      }
+    }
+
+    if (direction === "previous") {
+      if (currentPageNumber > 1) {
+        updatePage(currentPageNumber - 1);
+      }
+    }
+  };
+
   const loadNextArticle = () => {
     navigatePages(currentPageNumber, "next", updatePage);
   };
@@ -23,8 +36,6 @@ function NavBar({ currentPageNumber, updatePage }) {
       <Navigation>
         <ScrollableNavigation>
           <NavigationUl>
-           
-
             <PageNav
               currentPageNumber={currentPageNumber}
               onClick={loadPreviousArticle}

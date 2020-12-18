@@ -1,8 +1,8 @@
 import { Router, Redirect } from "@reach/router";
-import RankingPage from "../Pages/RankingPage";
-import SubmittedPage from "../Pages/SubmittedPage";
-import ArticlePage from "../Pages/ArticlePage";
-const createRoutes = (currentPageNumber) => {
+import RankingPage from "../pages/RankingPage";
+import SubmittedPage from "../pages/SubmittedPage";
+import ArticlePage from "../pages/ArticlePage";
+const createRoutes = ({ currentPageNumber }) => {
   return (
     <div>
       <Router>

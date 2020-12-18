@@ -1,6 +1,6 @@
 import Grid from "@bbc/psammead-grid";
 import { Headline } from "@bbc/psammead-headings";
-import getGridGroups from "../Helpers/GetGridGroups";
+import getGridGroups from "../helpers/GetGridGroups";
 
 const Heading = ({ text }) => {
   return (

@@ -1,6 +1,6 @@
 import Grid from "@bbc/psammead-grid";
 import Paragraph from "@bbc/psammead-paragraph";
-import getGridGroups from "../Helpers/GetGridGroups";
+import getGridGroups from "../helpers/GetGridGroups";
 
 const TextBody = ({ text }) => {
   return (
