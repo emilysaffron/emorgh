@@ -1,6 +1,6 @@
 import add from "./Function";
 import CalculatePageNumber from "./Helpers/CalculatePageNumber";
-
+import GetGridGroups from "./Helpers/GetGridGroups";
 test("faketest", () => {
   expect(true).toBeTruthy();
 });
@@ -18,5 +18,13 @@ test("CalculatePageNumber", () => {
   expect(CalculatePageNumber(1, "Previous")).toBe(1);
 });
 
-
-
+test("GetGridGroups", () => {
+  expect(GetGridGroups([8, 8, 8, 8, 8, 8])).toStrictEqual({
+    group0: 8,
+    group1: 8,
+    group2: 8,
+    group3: 8,
+    group4: 8,
+    group5: 8,
+  });
+});
