@@ -7,8 +7,8 @@ import Navigation, {
   NavigationLi,
 } from "@bbc/psammead-navigation";
 
-import PageNav from "./PageNav";
-import navigatePages from "../Helpers/NavigatePages";
+import PageNav from "../PageNav Component/PageNav";
+import navigatePages from "../../Helpers/NavigatePages";
 function NavBar({ currentPageNumber, updatePage }) {
   const loadNextArticle = () => {
     navigatePages(currentPageNumber, "next", updatePage);
@@ -23,8 +23,6 @@ function NavBar({ currentPageNumber, updatePage }) {
       <Navigation>
         <ScrollableNavigation>
           <NavigationUl>
-           
-
             <PageNav
               currentPageNumber={currentPageNumber}
               onClick={loadPreviousArticle}

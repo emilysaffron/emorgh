@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { SubHeading } from "@bbc/psammead-headings";
 import Grid from "@bbc/psammead-grid";
 import getGridGroups from "../Helpers/GetGridGroups";
-import Loading from "../Components/Loading";
+import Loading from "../Components/LoadingComponent/Loading";
 import styled from "@emotion/styled";
 import tick from "./tick.png";
 

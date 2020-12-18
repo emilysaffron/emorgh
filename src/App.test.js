@@ -1,8 +1,6 @@
 import add from "./Function";
 import CalculatePageNumber from "./Helpers/CalculatePageNumber";
-import renderer from "react-test-renderer";
-import Heading from "./Components/Heading";
-import Image from "./Components/Image";
+
 test("faketest", () => {
   expect(true).toBeTruthy();
 });
@@ -20,13 +18,5 @@ test("CalculatePageNumber", () => {
   expect(CalculatePageNumber(1, "Previous")).toBe(1);
 });
 
-//Snapshot Tests
-it("Heading Snapshot", () => {
-  const tree = renderer.create(<Heading text="text" />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
 
-it("Image Snapshot", () => {
-  const tree = renderer.create(<Image alt="image" url="photo" />).toJSON();
-  expect(tree).toMatchSnapshot();
-});
+

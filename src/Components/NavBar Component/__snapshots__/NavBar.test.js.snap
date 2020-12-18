@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavBar Snapshot 1`] = `
+<div
+  className="Nav"
+>
+  <nav
+    className="css-5vwsm5-StyledNav e1lim4kn5"
+    dir="ltr"
+    role="navigation"
+  >
+    <div
+      className="css-h6pr6t-NavWrapper e1lim4kn0"
+    >
+      <div
+        className="css-f0nofw-StyledScrollableNav e1fc18nj0"
+        dir="ltr"
+      >
+        <ul
+          className="css-1p24brr-StyledUnorderedList e1lim4kn1"
+          role="list"
+        >
+          <a
+            href="/articleundefined"
+            onClick={[Function]}
+          >
+            <li
+              className="css-1vectme-StyledListItem e1lim4kn3"
+              dir="ltr"
+              role="listitem"
+            >
+              <a
+                className="css-cig9wk-StyledLink e1lim4kn2"
+                onClick={[Function]}
+              >
+                Previous
+              </a>
+            </li>
+          </a>
+          <a
+            href="/articleundefined"
+            onClick={[Function]}
+          >
+            <li
+              className="css-1vectme-StyledListItem e1lim4kn3"
+              dir="ltr"
+              role="listitem"
+            >
+              <a
+                className="css-cig9wk-StyledLink e1lim4kn2"
+                onClick={[Function]}
+              >
+                Next
+              </a>
+            </li>
+          </a>
+          <a
+            href="/rate"
+            onClick={[Function]}
+          >
+            <li
+              className="css-1vectme-StyledListItem e1lim4kn3"
+              dir="ltr"
+              role="listitem"
+            >
+              <a
+                className="css-cig9wk-StyledLink e1lim4kn2"
+              >
+                Rate the Articles
+              </a>
+            </li>
+          </a>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

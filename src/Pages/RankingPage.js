@@ -6,7 +6,7 @@ import Grid from "@bbc/psammead-grid";
 
 import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import { Link } from "@reach/router";
-import RankableItem from "../Components/RankableItem";
+import RankableItem from "../Components/RankableItem Component/RankableItem";
 import getGridGroups from "../Helpers/GetGridGroups";
 
 const RankingPage = () => {

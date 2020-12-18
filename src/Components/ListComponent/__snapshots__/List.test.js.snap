@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List Snapshot 1`] = `
+<div
+  className="css-vxrtof-GridComponent e57qer20"
+  dir="ltr"
+>
+  <ul
+    className="css-l31ibh-BulletedList e1drcs2w0"
+    dir="ltr"
+    role="list"
+  >
+    <li
+      className="css-chb3zw-BulletedListItem e1drcs2w1"
+      role="listitem"
+    >
+      [
+    </li>
+    <li
+      className="css-chb3zw-BulletedListItem e1drcs2w1"
+      role="listitem"
+    >
+      ]
+    </li>
+  </ul>
+</div>
+`;

@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Paragraph Snapshot 1`] = `
+<div
+  className="css-19yvp8i-GridComponent e57qer20"
+  dir="ltr"
+>
+  <p
+    className="css-dv6jpn-Paragraph e1c0huex0"
+  />
+</div>
+`;

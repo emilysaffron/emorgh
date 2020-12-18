@@ -3,7 +3,7 @@ import {
   MostReadRank,
   MostReadItemWrapper,
 } from "@bbc/psammead-most-read";
-import fetchTitle from "../Helpers/FetchTitle";
+import fetchTitle from "../../Helpers/FetchTitle";
 import { latin } from "@bbc/gel-foundations/scripts";
 import { Rating } from "@material-ui/lab";
 const RankableItem = ({ index }) => {

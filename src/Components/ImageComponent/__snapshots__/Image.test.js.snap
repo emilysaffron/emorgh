@@ -1,18 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Heading Snapshot 1`] = `
-<div
-  className="css-vxrtof-GridComponent e57qer20"
-  dir="ltr"
->
-  <h1
-    className="css-1omfudl-Headline e14hemmw0"
-  >
-    text
-  </h1>
-</div>
-`;
-
 exports[`Image Snapshot 1`] = `
 <div
   className="css-vxrtof-GridComponent e57qer20"

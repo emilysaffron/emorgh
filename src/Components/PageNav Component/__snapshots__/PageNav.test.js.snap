@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageNav Snapshot 1`] = `
+<a
+  href="/articleundefined"
+  onClick={[Function]}
+>
+  <li
+    className="css-1vectme-StyledListItem e1lim4kn3"
+    dir="ltr"
+    role="listitem"
+  >
+    <a
+      className="css-cig9wk-StyledLink e1lim4kn2"
+    />
+  </li>
+</a>
+`;

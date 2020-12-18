@@ -1,6 +1,6 @@
 import BulletedList, { BulletedListItem } from "@bbc/psammead-bulleted-list";
 import Grid from "@bbc/psammead-grid";
-import getGridGroups from "../Helpers/GetGridGroups";
+import getGridGroups from "../../Helpers/GetGridGroups";
 
 const List = ({ items }) => {
   let listLength = items.length;
