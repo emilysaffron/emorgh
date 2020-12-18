@@ -3,10 +3,16 @@ import {
   MostReadRank,
   MostReadItemWrapper,
 } from "@bbc/psammead-most-read";
-import fetchTitle from "../Helpers/FetchTitle";
 import { latin } from "@bbc/gel-foundations/scripts";
 import { Rating } from "@material-ui/lab";
+import getData from "../helpers/FetchArticles";
+
 const RankableItem = ({ index }) => {
+  const fetchTitle = (num) => {
+    const title = getData(num)[0].model.text;
+    return title;
+  };
+
   return (
     <div>
       {" "}

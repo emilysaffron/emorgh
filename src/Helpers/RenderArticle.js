@@ -1,8 +1,9 @@
-import Heading from "../Components/Heading";
-import TextBody from "../Components/Paragraph";
-import Photo from "../Components/Image";
-import List from "../Components/List";
-const renderArticle = (article) => {
+import Heading from "../components/Heading";
+import TextBody from "../components/Paragraph";
+import Photo from "../components/Image";
+import List from "../components/List";
+
+const renderArticle = ({ article }) => {
   return article.map((item) => {
     switch (item.type) {
       case "heading":

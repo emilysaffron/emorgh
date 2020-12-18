@@ -3,7 +3,7 @@ const getData = (num) => {
 
   let article = "";
 
-  data = require(`../Data/article-${num}.json`);
+  data = require(`../data/article-${num}.json`);
   article = data.body;
   return article;
 };

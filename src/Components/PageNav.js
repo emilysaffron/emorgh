@@ -1,4 +1,4 @@
-import CalculatePageNumber from "../Helpers/CalculatePageNumber";
+import CalculatePageNumber from "../helpers/CalculatePageNumber";
 import { Link } from "@reach/router";
 import { NavigationLi } from "@bbc/psammead-navigation";
 const PageNav = ({ currentPageNumber, onClick, direction }) => {

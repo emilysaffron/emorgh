@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import NavBar from "./Components/NavBar";
-import createRoutes from "./Helpers/FetchRoutes";
+import NavBar from "./components/NavBar";
+import Routes from "./helpers/FetchRoutes";
 
 function App() {
   const [currentPageNumber, updatePage] = useState(1);
-  const routes = createRoutes(currentPageNumber, updatePage);
+
   return (
     <div className="App">
       <NavBar currentPageNumber={currentPageNumber} updatePage={updatePage} />
-      {routes}
+      <Routes currentPageNumber={currentPageNumber} />
     </div>
   );
 }

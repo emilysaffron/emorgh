@@ -1,4 +1,4 @@
-import getGridGroups from "../Helpers/GetGridGroups";
+import getGridGroups from "../helpers/GetGridGroups";
 import Grid from "@bbc/psammead-grid";
 import styled from "@emotion/styled";
 import Loader from "react-loader-spinner";

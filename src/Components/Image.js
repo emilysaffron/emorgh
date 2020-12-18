@@ -1,6 +1,6 @@
 import Grid from "@bbc/psammead-grid";
 import Image from "@bbc/psammead-image";
-import getGridGroups from "../Helpers/GetGridGroups";
+import getGridGroups from "../helpers/GetGridGroups";
 import styled from "@emotion/styled";
 
 const StyledImage = styled(Image)`

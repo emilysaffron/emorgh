@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Grid from "@bbc/psammead-grid";
-import getData from "../Helpers/FetchArticles";
-import renderArticle from "../Helpers/RenderArticle";
-import getGridGroups from "../Helpers/GetGridGroups";
+import getData from "../helpers/FetchArticles";
+import ArticleRenderer from "../helpers/RenderArticle";
+import getGridGroups from "../helpers/GetGridGroups";
 
 function ArticlePage({ num }) {
-  const [article, setArticle] = useState("");
+  const [article, setArticle] = useState(false);
 
   useEffect(() => {
     setArticle(getData(num));
@@ -17,7 +17,7 @@ function ArticlePage({ num }) {
       columns={getGridGroups([8, 8, 8, 8, 8, 8])}
       margins={getGridGroups([true, true, true, true, true, true])}
     >
-      {renderArticle(article)}
+      <ArticleRenderer article={article} />
     </Grid>
   ) : (
     <div>loading ...</div>
