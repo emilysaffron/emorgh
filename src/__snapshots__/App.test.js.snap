@@ -12,3 +12,20 @@ exports[`Heading Snapshot 1`] = `
   </h1>
 </div>
 `;
+
+exports[`Image Snapshot 1`] = `
+<div
+  className="css-vxrtof-GridComponent e57qer20"
+  dir="ltr"
+>
+  <img
+    alt="image"
+    className="css-1rfwwn3-StyledImg e1enwo3v0"
+    height={null}
+    sizes={null}
+    src="photo"
+    srcSet={null}
+    width={null}
+  />
+</div>
+`;
