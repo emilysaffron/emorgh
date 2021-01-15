@@ -1,6 +1,11 @@
 /* eslint-disable no-undef */
 describe("The Home Page", () => {
   it("successfully loads", () => {
-    cy.visit("/"); // change URL to match your dev URL
+    cy.visit("/");
+    cy.url().should("include", "/article1");
+
+    cy.contains("Next").click();
+
+    cy.url().should("include", "/article2");
   });
 });
