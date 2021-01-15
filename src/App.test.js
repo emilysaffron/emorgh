@@ -9,7 +9,7 @@ test("add", () => {
   expect(add(1, 2)).toBe(3);
 });
 
-//Unit Test
+//Unit Tests
 
 test("CalculatePageNumber", () => {
   expect(CalculatePageNumber(3, "Next")).toBe(4);
